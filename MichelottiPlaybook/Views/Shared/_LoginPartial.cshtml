@@ -1,0 +1,20 @@
+﻿@using MichelottiPlaybook;
+@if(Request.IsAuthenticated) {
+    <text>Welcome <b>@Context.User.Identity.Name</b>!
+    [ @Html.RootActionLink("Sign Out", "SignOut", "Account") ]</text>
+}
+else {
+    @:[ @Html.RootActionLink("Sign In", "SignIn", "Account") ]
+}
+
+@*@if (Request.IsAuthenticated) {
+    <p>
+        Hello, @Html.ActionLink(User.Identity.Name, "ChangePassword", "Account", routeValues: null, htmlAttributes: new { @class = "username", title = "Change password" })!
+        @Html.ActionLink("Log off", "LogOff", "Account")
+    </p>
+} else {
+    <ul>
+        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}*@

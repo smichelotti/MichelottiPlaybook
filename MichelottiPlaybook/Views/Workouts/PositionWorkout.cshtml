@@ -1,0 +1,39 @@
+﻿@model List<List<MichelottiPlaybook.Models.WorkoutItem>>
+@using MichelottiPlaybook;
+
+<div class="container">
+    <div class="page-header">
+        <h1>
+            @ViewBag.PageTitle
+            <small>
+                @ViewBag.PageSubTitle
+            </small>
+        </h1>
+    </div>
+
+
+    <div class="tabbable"> <!-- Only required for left/right tabs -->
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#workout1" data-toggle="tab">Workout 1</a></li>
+            <li><a href="#workout2" data-toggle="tab">Workout 2</a></li>
+        </ul>
+        <div class="tab-content">
+            @{ var workoutCount = 1; }
+            @foreach (var completeWorkout in this.Model)
+            {
+                var tabClass = (workoutCount == 1 ? "active" : "");
+                <div class="tab-pane @(tabClass)" id="workout@(workoutCount)">
+                    <ol>
+                        @foreach (var drill in completeWorkout)
+	                    {
+                            <li>
+                                <a href="@drill.Href">@drill.Name</a> - @drill.Description
+                            </li>
+                        }
+                    </ol>
+                </div>
+                workoutCount++;
+            }
+        </div>
+    </div>
+</div>

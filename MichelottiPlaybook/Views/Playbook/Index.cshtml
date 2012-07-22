@@ -1,0 +1,46 @@
+﻿@using MichelottiPlaybook;
+<div class="container">
+    <div class="page-header">
+        <h1>
+            Playbook
+            <small>This section details all of our plays. This will reinforce what we covered in practice.</small>
+        </h1>
+    </div>
+
+    <div class="row-fluid">
+        <div class="span3">
+            <h2>Offense</h2>
+            <p>Our naming convention is to use <u>college team names</u> to name our half-court offensive plays (e.g., "Georgetown", "UConn", etc.).</p>
+            <p>@Html.PlayLinkButton("offense")</p>
+        </div>
+        <div class="span3">
+            <h2>Offensive Set Plays</h2>
+            <p>No specific naming convention.</p>
+            <p>@Html.PlayLinkButton("offensive-set-plays")</p>
+        </div>
+        <div class="span3">
+            <h2>Out of bounds</h2>
+            <p>Our naming convention is to use <u>alignment + number</u> for our out of bounds plays (e.g., "Stack 1", "Box 2", etc.).</p>
+            <p>@Html.PlayLinkButton("out-of-bounds")</p>
+        </div>
+    </div><!--/row-->
+
+    <div class="row-fluid">
+        <div class="span3">
+            <h2>Defense</h2>
+            <p>Our naming convention is to use <u>numbers</u> for our half-court defensive sets (e.g., "1", "23", "13", etc.).</p>
+            <p>@Html.PlayLinkButton("defense")</p>
+        </div>
+        <div class="span3">
+            <h2>Presses</h2>
+            <p>Our naming convention is to use <u>colors</u> for our presses (e.g., "Red", "Blue", etc.).</p>
+            <p>@Html.PlayLinkButton("presses")</p>
+        </div>
+    
+        <div class="span3">
+            <h2>Press Breaks</h2>
+            <p>No specific naming convention.</p>
+            <p>@Html.PlayLinkButton("press-breaks")</p>
+        </div>
+    </div><!--/row-->
+</div>

@@ -1,0 +1,47 @@
+﻿@model List<MichelottiPlaybook.Models.User>
+
+<div class="container">
+    <div class="page-header">
+        <h1>User Admin</h1>
+    </div>
+
+    <table class="table table-striped table-bordered table-condensed">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Is Approved</th>
+                <th>User ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in this.Model)
+            {
+                <tr>
+                    <td>@user.Name</td>
+                    <td>@user.Email</td>
+
+                    <td>
+                        <div class="row-fluid">
+                            <div class="span4">@(user.IsApproved ? "Yes" : "No")</div>
+                            <div class="span2">
+                                @using (Html.BeginForm("Approval", "UserAdmin")) {
+                                    @Html.Hidden("userId", @user.UserId)
+                                    @Html.Hidden("approval", !user.IsApproved)
+                                    if (user.IsApproved) {
+                                        <button type="submit" class="btn btn-warning">Unapprove</button>
+                                    }
+                                    else {
+                                        <button type="submit" class="btn btn-primary">Approve</button>
+                                    }
+                                }
+                            </div>
+                        </div>
+                    </td>
+
+                    <td>@user.UserId</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

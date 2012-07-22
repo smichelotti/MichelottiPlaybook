@@ -1,0 +1,20 @@
+﻿@model Dictionary<string, MichelottiPlaybook.Models.HrdIdentityProvider>
+
+<div class="container">
+    <div class="page-header">
+        <h1>
+            Sign In
+            <small>
+                Michelotti Playbook allows secure login with any of these major providers.<br />
+                If you don't already have one of these accounts, it's easy (and free) to sign up!
+            </small>
+        </h1>
+    </div>
+
+    <div class="row-fluid">
+        @Html.Partial("_ProviderLogin", Model["Google"])
+        @Html.Partial("_ProviderLogin", Model["Facebook"])
+        @Html.Partial("_ProviderLogin", Model["Yahoo!"])
+        @Html.Partial("_ProviderLogin", Model["Windows Live"])
+    </div>
+</div>

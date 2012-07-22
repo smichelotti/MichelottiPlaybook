@@ -1,0 +1,56 @@
+﻿@model MichelottiPlaybook.Models.PlayCategory
+
+<h2>@Model.Name</h2>
+
+
+<div id="playsContainer" class="row-fluid">
+    <div class="span2">
+        <div class="well sidebar-nav">
+            <ul id="playslist" class="nav nav-list">
+                <li class="nav-header">@Model.Name</li>
+                @foreach (var item in @Model.Plays) {
+                    <li><a href="#@item.Slug" data-videouri="@item.Uri">
+                        @if (!string.IsNullOrEmpty(item.Uri)) {
+                            <i class="icon-play"></i>
+                        }
+                        @item.Name</a></li>
+                }
+            </ul>
+        </div><!--/.well -->
+    </div><!--/span-->
+    
+    <div class="span4">
+        <div id="comingSoon" class="alert alert-info">
+            This video coming soon!
+        </div>
+        <h3 id="playName"></h3>
+
+        <video id="videoPlayer" class="video-js vjs-default-skin" preload="auto" width="586" height="480" controls="controls" data-setup="{}">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</div>
+
+@section scriptSection {
+<script type="text/javascript">
+    $(function () {
+        var videoPlayer = _V_("videoPlayer");
+        var firstHash = $("#playslist li:has(a)").first().find("a").attr("href");
+
+        $.sammy('#playsContainer', function () {
+            this.get("#:playslug", function () {
+
+                $("#playslist li").removeClass("active");
+                $("#playslist li:has(a[href='#" + this.params.playslug + "'])").addClass("active");
+
+                var activeA = $("#playslist li[class='active'] a");
+                var videoUri = activeA.attr("data-videouri");
+                $("#comingSoon").toggle(videoUri === "");
+                //$("video").attr("src", videoUri);
+                videoPlayer.src({ type: "video/mp4", src: videoUri });
+                $("#playName").html(activeA.html());
+            });
+        }).run(firstHash);
+    });
+</script>
+}

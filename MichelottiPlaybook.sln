@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MichelottiPlaybook", "MichelottiPlaybook\MichelottiPlaybook.csproj", "{D35BE5F6-F086-44A1-B71F-20DEF8B3C804}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MichelottiPlaybook.Tests", "MichelottiPlaybook.Tests\MichelottiPlaybook.Tests.csproj", "{A524E648-4133-40A0-89F9-E270DA1498EA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{B41A7C54-F1B1-4F38-86C6-C30ED1FF0AF1}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{42871DBA-AB07-4B39-A0BA-53BC2922ADF0}"
+	ProjectSection(SolutionItems) = preProject
+		readme.md = readme.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A524E648-4133-40A0-89F9-E270DA1498EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A524E648-4133-40A0-89F9-E270DA1498EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A524E648-4133-40A0-89F9-E270DA1498EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A524E648-4133-40A0-89F9-E270DA1498EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D35BE5F6-F086-44A1-B71F-20DEF8B3C804}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D35BE5F6-F086-44A1-B71F-20DEF8B3C804}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D35BE5F6-F086-44A1-B71F-20DEF8B3C804}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D35BE5F6-F086-44A1-B71F-20DEF8B3C804}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

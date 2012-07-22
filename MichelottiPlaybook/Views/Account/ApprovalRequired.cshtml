@@ -1,0 +1,35 @@
+﻿@model MichelottiPlaybook.Models.User
+
+
+@if (Model == null || string.IsNullOrEmpty(Model.Name))
+{
+    
+    <h2>You are authenticated but you need to send an Approval request to Steve.</h2>
+
+    using (Html.BeginForm()) 
+    { 
+        <fieldset>
+            <legend>Specify your full name and submit request below</legend>
+        
+            <div class="control-group">
+                <label class="control-label">Name:</label>
+                <div class="controls">
+                    @Html.EditorFor(model => model.Name)
+                    @Html.ValidationMessageFor(model => model.Name)
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <input type="submit" value="Submit" class="btn btn-primary" />
+            </div>
+
+        </fieldset>
+    }
+}
+else {
+    <h2>You are authenticated and your approval request to Steve is pending.</h2>
+    if (!string.IsNullOrEmpty(Model.Name))
+    {
+        <h2>Current User: @Model.Name</h2>    
+    }
+}
