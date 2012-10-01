@@ -52,7 +52,7 @@ namespace MichelottiPlaybook
         public static MvcHtmlString PlayLinkButton(this HtmlHelper htmlHelper, string categorySlug)
         {
             var urlHelper = new UrlHelper(htmlHelper.ViewContext.RequestContext);
-            var url = urlHelper.Action("Category", "Playbook", new { categorySlug = categorySlug });
+            var url = urlHelper.Action("Index", "Video", new { categorySlug = categorySlug, playType = "Play", area = string.Empty });
 
             var tagBuilder = new TagBuilder("a");
             tagBuilder.MergeAttribute("href", url);
