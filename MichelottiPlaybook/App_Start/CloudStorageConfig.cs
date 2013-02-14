@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using MichelottiPlaybook.Models;
 using Microsoft.WindowsAzure;
-using Microsoft.WindowsAzure.ServiceRuntime;
+//using Microsoft.WindowsAzure.ServiceRuntime;
 using Microsoft.WindowsAzure.StorageClient;
 
 namespace MichelottiPlaybook
@@ -14,17 +14,7 @@ namespace MichelottiPlaybook
     {
         public static void Configure()
         {
-            if (RoleEnvironment.IsAvailable)
-            {
-                //var account = CloudStorageAccount.FromConfigurationSetting("AzureStorage");
-                //var tableClient = new CloudTableClient(account.TableEndpoint.AbsoluteUri, account.Credentials);
-                //CloudTableClient.CreateTablesFromModel(typeof(PlaybookTableContext), account.TableEndpoint.AbsoluteUri, account.Credentials);
-            }
-            else
-            {
-                CloudStorageAccount.SetConfigurationSettingPublisher((configName, configSetter) => configSetter(ConfigSettingPublisher.GetSettingValue(configName)));
-
-            }
+            CloudStorageAccount.SetConfigurationSettingPublisher((configName, configSetter) => configSetter(ConfigSettingPublisher.GetSettingValue(configName)));
         }
 
         private static class ConfigSettingPublisher
